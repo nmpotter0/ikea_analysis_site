@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+    	<title>IKEA Location Analysis</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+        <style>
+      		body {
+        		font-family: 'Roboto', sans-serif;
+        		font-size: 14px;
+      		}
+            #ikea_title{
+                color: #666679;
+            }
+    	</style>
+    </head>
+    <body>
+        <div class='container-fluid'>
+        <div style="margin-top: 75px; margin-bottom: 75px; margin-left: 75px; margin-right: 75px;">
+            <h1 id='ikea_title'>IKEA Location Analysis</h1>
+            <p>
+                Louisville, Kentucky, has had IKEA rumors. <a href="http://insiderlouisville.com/business/mbb-21/">An Insider Louisville article</a> covering the topic was pessimistic claiming that the Louisville area woud not provide the population that the existing West Chester, Ohio location reaches. I wanted to put this to the test. Adapting a script for isochrone maps created by <a href="http://drewfustin.com/isochrones/">Drew Fustin</a>, I was able to create a visualization of existing IKEA locations and their corresponding one and two hour drive times. Joining these isochrones with Census tracts gave populations located within these drive times. (2014 ACS used & tracts within range of multiple locations were joined to the closest location.)
+            </p>
+        </div>
+    	<div style="margin-right: 10px; margin-left: 10px;">            
+    		<iframe width="100%" height="520" frameborder="0" src="https://nmpotter0.carto.com/viz/7cdf62d8-4fb3-11e6-b9a3-0e3ebc282e83/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+    	</div>
+        <div style="margin-top: 75px; margin-bottom: 75px; margin-left: 75px; margin-right: 75px;">
+            <p>
+                As demonstrated below, measuring up to the wide reach of IKEA West Chester is a tall task.<br>
+            </p>
+            <img src='images/existing_chart.png'></img>
+            <p>
+                <br><br>Next, I wanted to compare potential IKEA locations in the US. I considered cities outside of existing 1 hour drive times with populations of at least 200,000, and created isochrone maps for the each city. I then measured three metrics- potential population new to a 2 hour drive time, population previously within a 2 hour drive that would potentially be within a 1 hour drive, and potential population new to a 1 hour drive time. I created a weighted score to determine the potential for new visits to IKEA scores- (2* new 1 hour drive population, 1* upgraded from 2 to 1 hour population, 1* new 2 hour population)
+            </p>
+        </div>
+    	<div style="margin-right: 10px; margin-left: 10px;">
+    		<iframe width="100%" height="520" frameborder="0" src="https://nmpotter0.carto.com/viz/66919cba-4f88-11e6-8ffb-0e233c30368f/embed_map" allowfullscreen webkitallowfullscreen mozallowfullscreen oallowfullscreen msallowfullscreen></iframe>
+    	</div>
+    	<div style="margin-top: 75px; margin-bottom: 75px; margin-left: 75px; margin-right: 75px;">
+            <p>Potential added populations are shown below. (The 2 hour category includes the potential population within a 2 hour drive but outside a 1 hour drive.)<p>
+            <img src='images/potential_chart.png'></img><br><br>
+            <img src='images/weighted_chart.png'></img>
+    		<p>
+    			The calculated weighted scores reflect the potential for locations throughout the south. Cities in North Carolina, Nashville, Birmingham, and New Orleans were all among the highest scoring cities. Louisville possesses a fairly high score, but lags behind in the potential population that could be reached within a one hour drive.<br><br><br><br>
+                -<a href="http://nmpotter0.github.io">Nick Potter</a>
+    		</p>
+    	</div>
+        </div>
+    </body>
